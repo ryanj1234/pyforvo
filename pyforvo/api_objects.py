@@ -40,6 +40,13 @@ class Word(object):
     def play(self, fmt='mp3'):
         # TODO: implement for multiple OSes; don't download if already present
         with tempfile.TemporaryDirectory() as temp_dir:
-            path = f'{temp_dir}/{self.word}.{fmt}'
+            path = f'{temp_dir}/{self.word}_{self.username}.{fmt}'
             self.download(path)
             subprocess.Popen(['mplayer', path]).wait()
+
+
+class Language(object):
+    def __init__(self, code, en, language):
+        self.code = code
+        self.en = en
+        self.language = language
