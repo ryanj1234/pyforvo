@@ -1,5 +1,4 @@
-# Python Library for Forvo API
-## Work in progress
+# Python Library for Forvo API 
 
 Examples:
 
