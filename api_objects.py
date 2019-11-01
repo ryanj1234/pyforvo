@@ -44,6 +44,10 @@ class Word(object):
             self.download(path)
             subprocess.Popen(['mplayer', path]).wait()
 
+    def __str__(self):
+        return '{}: {}\tpronunciation by {},\tpositive votes: {}'.format(
+            self.word, self.language, self.username, self.positive_votes)
+
 
 class Language(object):
     def __init__(self, code, en, language):
